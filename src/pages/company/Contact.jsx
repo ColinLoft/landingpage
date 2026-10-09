@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { base44 } from "@/api/base44Client";
 import PageHero from "@/components/PageHero";
 import BlockList from "@/components/blocks/BlockList";
 import { Send, CheckCircle2, Loader2, Heart, Landmark, Trees, GraduationCap, Users, Lightbulb } from "lucide-react";
@@ -63,41 +62,12 @@ export default function Contact() {
     setErrors(errs);
     if (Object.keys(errs).length) return;
     setStatus("sending");
-    try {
-      await base44.entities.ContactMessage.create({
-        name: form.name,
-        email: form.email,
-        organization: form.organization,
-        interest: form.interest,
-        message: form.message,
-      });
-      // Email a copy to the site admins (registered app users)
-      try {
-        const admins = await base44.entities.User.filter({ role: "admin" }, { limit: 1 });
-        const admin = admins.items?.[0];
-        if (admin) {
-          await base44.integrations.Core.SendEmail({
-            to: admin.email,
-            subject: `New contact submission — ${form.interest}`,
-            html: `
-              <h2>New contact form submission</h2>
-              <p><strong>Name:</strong> ${form.name}</p>
-              <p><strong>Email:</strong> ${form.email}</p>
-              <p><strong>Organization:</strong> ${form.organization || "—"}</p>
-              <p><strong>Interest:</strong> ${form.interest}</p>
-              <p><strong>Message:</strong></p>
-              <p style="white-space:pre-line">${form.message}</p>
-            `,
-          });
-        }
-      } catch (emailErr) {
-        // Submission is stored; email copy is best-effort
-      }
-      setStatus("sent");
-    } catch (err) {
-      setStatus("idle");
-      setErrors({ form: "Something went wrong saving your message. Please try again." });
-    }
+    
+    // Simulate network delay for sending message
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    console.log("Contact form submitted:", form);
+    setStatus("sent");
   };
 
   const inputCls =
