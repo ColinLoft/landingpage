@@ -8,16 +8,14 @@ import { IMG } from "@/lib/images";
 const SCENES = [
   {
     img: IMG.fire,
-    icon: Flame,
     tag: "Minute 0 · Ignition",
-    line: "It starts as a spark on dry ground — small enough to step on, easy to miss.",
+    line: "It starts as a spark on dry ground small enough to step on, easy to miss.",
     stat: "86%",
-    statLabel: "of wildfires are human-ignited",
+    statLabel: "of wildfires are caused by humans",
     accent: "text-signal",
   },
   {
     img: IMG.thermal,
-    icon: Wind,
     tag: "Minute 15 · The Spread",
     line: "In wind, a small fire doubles in size before the first engine clears the station.",
     stat: "2×",
@@ -26,7 +24,6 @@ const SCENES = [
   },
   {
     img: IMG.aftermath,
-    icon: Home,
     tag: "The People in the Path",
     line: "At the edge of town, a family gets minutes to decide what matters most.",
     stat: "Minutes",
@@ -35,7 +32,6 @@ const SCENES = [
   },
   {
     img: IMG.responder,
-    icon: Activity,
     tag: "The Responders",
     line: "Crews stretch across miles of ridge line. No human force can watch it all at once.",
     stat: "24/7",
@@ -58,7 +54,6 @@ function Scene({ scene, index }) {
   const statOpacity = useTransform(p, [0.58, 0.72], [0, 1]);
   const statY = useTransform(p, [0.58, 0.72], [26, 0]);
   const bar = useTransform(p, [0.04, 0.96], [0, 1]);
-  const Icon = scene.icon;
 
   return (
     <div ref={ref} className="relative h-[220vh] w-full">
