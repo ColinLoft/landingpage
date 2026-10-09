@@ -4,8 +4,9 @@ import { Image } from "@/components/ui/image";
 import { IMG } from "@/lib/images";
 
 const EARTH = IMG.fire;
+// Free-to-use aerial wildfire footage (Wikimedia Commons, CC): wide drone shot
 // of the Wennington wildfire, 2022 — 1080p VP9 webm derivative, streamed live.
-const HERO_VIDEO = "https://cdn.hackclub.com/01a121f7-75ac-77ee-bfb0-78ca7443f11d/271700_small.mp4";
+const HERO_VIDEO = "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/60/Harri_Healey_-_Aerial_video_of_Wennington_wildfire%2C_2022.webm/Harri_Healey_-_Aerial_video_of_Wennington_wildfire%2C_2022.webm.1080p.vp9.webm";
 
 export default function Hero() {
   const ref = React.useRef(null);
@@ -61,7 +62,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 1 }}
             className="mt-7 max-w-xl text-base sm:text-lg text-white/90 leading-relaxed text-balance drop-shadow-[0_2px_16px_rgba(10,11,13,0.95)]"
           >
-            Every minute a fire burns unwatched, it grows. Season Report detects it and puts it out, <span className="text-white">in minutes</span>.
+            Every minute a fire burns unwatched, it grows. Season Report detects it — and puts it out, <span className="text-white">in minutes</span>.
           </motion.p>
         </motion.div>
 
