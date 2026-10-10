@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Zap, Github, Linkedin, Twitter, Youtube, Instagram, ArrowRight } from "lucide-react";
 
 const SOCIALS = [
@@ -41,33 +41,6 @@ const LINK_GROUPS = [
   },
 ];
 
-function ReadinessTicker() {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  useEffect(() => {
-    if (!inView) return;
-    let n = 0;
-    const target = 98.7;
-    const id = setInterval(() => {
-      n += target / 60;
-      if (n >= target) { n = target; clearInterval(id); }
-      setCount(n);
-    }, 16);
-    return () => clearInterval(id);
-  }, [inView]);
-  return (
-    <div ref={ref} className="flex items-center gap-3">
-      <span className="relative flex h-2.5 w-2.5">
-        <span className="absolute inline-flex h-full w-full rounded-full bg-glacial opacity-60 animate-ping" />
-        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-glacial" />
-      </span>
-      <span className="text-xs text-slate-tech uppercase tracking-wider">Operational Readiness</span>
-      <span className="text-sm font-mono text-glacial tabular-nums">{count.toFixed(1)}%</span>
-    </div>
-  );
-}
-
 export default function Footer() {
   return (
     <footer className="relative bg-obsidian border-t border-hairline overflow-hidden">
@@ -88,16 +61,13 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-slate-tech leading-relaxed max-w-sm">
-              A nonprofit on a mission to solve the world's problems — natural disasters and beyond —
+              A nonprofit on a mission to solve the world's problems, natural disasters and beyond
               with technology and hardware built in-house. We detect. We respond. We protect people,
               property, and the planet.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-hairline bg-white/[0.02]">
               <span className="text-[10px] tracking-mega text-slate-tech uppercase">EIN</span>
-              <span className="text-xs font-mono text-white/70">XX-XXXXXXX</span>
-            </div>
-            <div className="mt-5">
-              <ReadinessTicker />
+              <span className="text-xs font-mono text-white/70">81-2908499</span>
             </div>
           </div>
 
@@ -123,7 +93,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <div className="text-[10px] tracking-mega text-slate-tech uppercase mb-3">Talk to Us</div>
             <p className="text-sm text-slate-tech leading-relaxed mb-4">
-              Donors, investors, mentors, municipalities, volunteers — let's build the answer together.
+              Donors, investors, mentors, municipalities, volunteers let's build the answer together.
             </p>
             <Link
               to="/company/contact"
