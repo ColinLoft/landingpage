@@ -68,9 +68,6 @@ function Scene({ scene, index }) {
           <div className="mx-auto max-w-[1400px] w-full px-6 lg:px-12">
             <div className="max-w-2xl">
               <motion.div style={{ opacity: tagOpacity, x: tagX }} className="flex items-center gap-3 mb-5">
-                <div className={`w-10 h-10 rounded-lg border border-hairline bg-white/[0.04] flex items-center justify-center ${scene.accent}`}>
-                  <Icon className="w-5 h-5" />
-                </div>
                 <span className="text-xs tracking-mega text-slate-tech uppercase">{scene.tag}</span>
               </motion.div>
               <h2 className="font-heading font-semibold text-white text-balance text-[clamp(1.75rem,4.5vw,3.5rem)] leading-[1.08]">
