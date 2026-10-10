@@ -79,7 +79,7 @@ export default function Toll() {
           </h2>
           <p className="mt-5 text-base lg:text-lg text-slate-tech leading-relaxed max-w-2xl">
             These aren't abstract numbers. They're homes, ecosystems, and lives. Wildfire is where
-            we start and the scale of the crisis is exactly why detection alone has never been enough. Tyler was here C:
+            we start and the scale of the crisis is exactly why detection alone has never been enough.
           </p>
         </motion.div>
 
