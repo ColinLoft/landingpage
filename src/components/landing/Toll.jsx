@@ -79,7 +79,7 @@ export default function Toll() {
           </h2>
           <p className="mt-5 text-base lg:text-lg text-slate-tech leading-relaxed max-w-2xl">
             These aren't abstract numbers. They're homes, ecosystems, and lives. Wildfire is where
-            we start — and the scale of the crisis is exactly why detection alone has never been enough.
+            we start and the scale of the crisis is exactly why detection alone has never been enough. Tyler was here C:
           </p>
         </motion.div>
 
@@ -96,9 +96,6 @@ export default function Toll() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-14 flex items-center gap-3 text-sm text-slate-tech"
         >
-          <div className="h-px flex-1 bg-hairline" />
-          <span className="tracking-wider uppercase text-xs">Sources · NOAA · NIFC · EM-DAT · IPCC</span>
-          <div className="h-px flex-1 bg-hairline" />
         </motion.div>
       </div>
     </motion.section>
