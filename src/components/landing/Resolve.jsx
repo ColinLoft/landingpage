@@ -2,8 +2,6 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollWords from "@/components/landing/ScrollWords";
 
-// Pinned for ~3 screens: the line draws across, then the headline and the
-// supporting paragraph appear word-by-word as the reader scrolls.
 export default function Resolve() {
   const ref = React.useRef(null);
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -14,15 +12,6 @@ export default function Resolve() {
   return (
     <motion.section ref={ref} style={{ backgroundColor: bg }} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <motion.svg
-          className="absolute left-0 top-1/2 w-full h-px"
-          style={{ opacity: exit }}
-          viewBox="0 0 100 1"
-          preserveAspectRatio="none"
-        >
-          <motion.line x1="0" y1="0.5" x2="100" y2="0.5" stroke="#ffae00" strokeWidth="0.5" style={{ pathLength: lineDraw }} />
-        </motion.svg>
-
         <motion.div style={{ opacity: exit }} className="relative text-center px-6">
           <motion.div style={{ opacity: eyebrowOpacity }} className="text-[11px] tracking-mega text-glacial uppercase mb-6">
             The Resolve
