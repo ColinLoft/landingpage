@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import { IMG } from "@/lib/images";
 
 const TEAM = [
-  { name: "Founder", role: "Systems & Vision", img: "https://media.base44.com/images/public/6ac1b432598089bbd885aefa/29ed9447b_generated_88d12021.jpg" },
+  { name: "Founder 1", role: "Hardware Engineering", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" },
+  { name: "Founder 2", role: "Software & AI", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" },
+  { name: "Founder 3", role: "Operations & Flight", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" },
+  { name: "Founder 4", role: "Systems Design", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" },
 ];
 
 const NODE_CALLOUTS = [
@@ -85,7 +88,7 @@ export default function Forge() {
           >
             <div className="text-[11px] tracking-mega text-glacial uppercase mb-5">The Forge · Who We Are</div>
             <h2 className="font-heading font-bold text-white text-balance text-[clamp(2rem,5vw,4rem)] leading-[1.05]">
-              Five high schoolers,<br />
+              Four high schoolers,<br />
               <span className="text-glacial">on a mission to save the world.</span>
             </h2>
             <p className="mt-5 text-base lg:text-lg text-slate-tech leading-relaxed max-w-2xl">
@@ -97,39 +100,27 @@ export default function Forge() {
         </div>
 
         {/* Team visual */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8 }}
-          className="relative rounded-2xl overflow-hidden border border-hairline mb-24 lg:mb-32 group"
-        >
-          <div className="aspect-[16/9] lg:aspect-[21/9]">
-            <Image
-              src={IMG.team}
-              alt="The team in the workshop"
-              fittingType="fill"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent" />
-          <div className="absolute bottom-0 inset-x-0 p-6 lg:p-10">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <div className="flex items-center gap-2 mb-2 text-[10px] tracking-mega text-slate-tech uppercase">
-                  <Users className="w-3.5 h-3.5 text-signal" /> The Founders
-                </div>
-                <div className="text-white font-heading font-semibold text-xl lg:text-2xl">
-                  Engineering wildfire response — one node, one flight at a time.
-                </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 lg:mb-32">
+          {TEAM.map((member, i) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group relative rounded-2xl overflow-hidden border border-hairline bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+            >
+              <div className="aspect-[3/4] relative overflow-hidden">
+                <Image src={member.img} alt={member.name} fittingType="fill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent" />
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-hairline">
-                <Wrench className="w-4 h-4 text-signal" />
-                <span className="text-xs text-white/80">Built in-house</span>
+              <div className="absolute bottom-0 inset-x-0 p-5">
+                <div className="text-white font-heading font-semibold text-lg">{member.name}</div>
+                <div className="text-signal text-xs uppercase tracking-mega mt-1">{member.role}</div>
               </div>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
 
         {/* Tech intro */}
         <div className="max-w-3xl mb-14">

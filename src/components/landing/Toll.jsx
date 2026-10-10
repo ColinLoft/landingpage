@@ -5,9 +5,9 @@ const STATS = [
   { value: 52000, suffix: "+", label: "Wildfires per year", sub: "United States, annual average", accent: "text-signal", bar: "from-signal/20" },
   { value: 1.5, suffix: "M", label: "Acres burned", sub: "U.S. land lost to wildfire yearly", accent: "text-signal", bar: "from-signal/20", decimals: 1 },
   { value: 350, prefix: "$", suffix: "B", label: "In annual wildfire losses", sub: "Suppression, property and recovery costs", accent: "text-signal", bar: "from-signal/20" },
-  { value: 70, suffix: "+", label: "Named storms", sub: "Hurricanes & typhoons, global", accent: "text-glacial", bar: "from-glacial/20" },
-  { value: 40, suffix: "%", label: "Drought coverage", sub: "Land affected by drought annually", accent: "text-signal", bar: "from-signal/20" },
-  { value: 600, suffix: "+", label: "Tornadoes", sub: "Reported per year, U.S. alone", accent: "text-white", bar: "from-white/20" },
+  { value: 1.7, suffix: "B", label: "Tons of CO₂", sub: "Global carbon emissions from wildfires", accent: "text-signal", bar: "from-signal/20", decimals: 1 },
+  { value: 17000, suffix: "+", label: "Structures destroyed", sub: "In the U.S. per year on average", accent: "text-signal", bar: "from-signal/20" },
+  { value: 105, suffix: "", label: "Days longer", sub: "Increase in average fire season since 1970", accent: "text-signal", bar: "from-signal/20" },
 ];
 
 function Counter({ value, decimals = 0, prefix = "", suffix = "" }) {
