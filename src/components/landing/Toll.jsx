@@ -41,9 +41,6 @@ function StatCard({ stat, i }) {
       className="group relative p-6 lg:p-8 rounded-2xl border border-hairline bg-white/[0.02] hover:bg-white/[0.04] transition-colors overflow-hidden"
     >
       <div className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-t ${stat.bar} to-transparent`} />
-      <div className="flex items-center justify-end mb-6">
-        <span className="text-[10px] tracking-mega text-slate-tech uppercase font-mono">0{i + 1}</span>
-      </div>
       <div className={`font-heading font-bold text-[clamp(2.25rem,5vw,3.5rem)] leading-none ${stat.accent}`}>
         <Counter value={stat.value} decimals={stat.decimals} prefix={stat.prefix} suffix={stat.suffix} />
       </div>
